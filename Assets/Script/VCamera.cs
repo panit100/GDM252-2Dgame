@@ -32,13 +32,13 @@ public class VCamera : MonoBehaviour
             go.SetActive(false);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z)){
-            vCam1.gameObject.SetActive(true);
-            vCam2.gameObject.SetActive(false);    
-        }else if(Input.GetKeyDown(KeyCode.X)){
-            vCam1.gameObject.SetActive(false);
-            vCam2.gameObject.SetActive(true);   
-        }
+        // if(Input.GetKeyDown(KeyCode.Z)){
+        //     vCam1.gameObject.SetActive(true);
+        //     vCam2.gameObject.SetActive(false);    
+        // }else if(Input.GetKeyDown(KeyCode.X)){
+        //     vCam1.gameObject.SetActive(false);
+        //     vCam2.gameObject.SetActive(true);   
+        // }
         
     }
 }

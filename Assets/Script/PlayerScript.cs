@@ -14,18 +14,35 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D rigidbody2D;
     Animator animator;
     AudioSource audioSource;
+    PlayerControl playerControl;
     // Start is called before the first frame update
+    // private void Awake() {
+    //     playerControl = new PlayerControl();
+    // }
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
+    // private void OnEnable() {
+    //     playerControl.Enable();
+    // }
+    // private void OnDisable() {
+    //     playerControl.Disable();
+    // }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")){
+        // float jumpInput = playerControl.PlayerControls.Jump.ReadValue<float>();
+        // if(Input.GetButtonDown("Fire1")){
+            
+        
+
+        animator.SetBool("Grounded",grounded);
+    }
+    public void Jump(){
             if(grounded && gameStarted){
                 jump = true;
                 grounded = false;
@@ -36,9 +53,6 @@ public class PlayerScript : MonoBehaviour
                 animator.SetTrigger("Start");
                 Debug.Log("1");
             }
-        } 
-
-        animator.SetBool("Grounded",grounded);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
